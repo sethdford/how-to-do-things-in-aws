@@ -1,0 +1,32 @@
+{
+    "name": "serverless-s3-unique-wi-id",
+    "version": "0.1.0",
+    "description": "Serverless CRUD unique workitem service using S3",
+    "scripts": {
+        "server:serverless": "node --inspect `which serverless` offline start",
+        "server:s3": "node ./node_modules/s3rver/bin/s3rver.js -d ./data",
+        "servers": "npm-run-all --parallel server:*",
+        "deploy": "serverless deploy",
+        "start": "npm run servers",
+        "test": "lab -v -l -m 3000 tests/handler.test.js"
+    },
+    "author": "",
+    "license": "APACHE",
+    "dependencies": {
+        "aws-sdk": "^2.6.7",
+        "js-yaml": "^3.7.0",
+        "code": "^5.2.0",
+        "isomorphic-fetch": "^2.2.1",
+        "lab": "^15.4.1",
+        "moment": "^2.22.1"
+    },
+    "devDependencies": {
+        "code": "^5.2.0",
+        "isomorphic-fetch": "^2.2.1",
+        "lab": "^15.4.1",
+        "moment": "^2.22.1",
+        "npm-run-all": "^4.1.2",
+        "s3rver": "^2.2.3",
+        "serverless-offline": "^3.20.2"
+    }
+}
